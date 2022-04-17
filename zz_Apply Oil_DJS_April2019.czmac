@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Script Version="1.0">
+  <Language>Python</Language>
+  <Text>
+currentZ = Zen.Devices.Focus.ActualPosition
+loadZ = currentZ - 2000
+Zen.Devices.Focus.MoveTo(loadZ)
+
+currentX = Zen.Devices.Stage.ActualPositionX
+currentY = Zen.Devices.Stage.ActualPositionY
+loadY = currentY - 20000
+
+Zen.Devices.Stage.MoveTo(currentX,loadY)
+
+okButton = ZenWindow()
+okButton.Initialize('Add the oil',200,100,True,False)
+okButton.AddLabel('Add Oil')
+activeWindow = okButton.Show()
+
+Zen.Devices.Stage.MoveTo(currentX,currentY)
+Zen.Devices.Focus.MoveTo(currentZ)
+</Text>
+  <Author></Author>
+  <Description></Description>
+  <ApplicationName></ApplicationName>
+  <Keywords></Keywords>
+  <Row>10</Row>
+  <Column>41</Column>
+  <WatchVariables>
+    <Watch>currentZ</Watch>
+    <Watch>targetZ</Watch>
+    <Watch>currentY</Watch>
+  </WatchVariables>
+</Script>
